@@ -1,0 +1,262 @@
+/* ==|====================
+   Layout/Main
+   ======================= */
+.main-tour {
+	margin: 2em 0;
+	position: relative;
+	@include responsive(small) {margin: 1em 0;}
+	&-items {
+		background-repeat: no-repeat;
+		background-size:cover;
+		border-radius: $radius;
+		padding: $margin-main-tour;
+		height: 15em;
+		position: relative;
+		@include box-sizing(border-box);
+		overflow: hidden;
+		display: block;
+		width: 32.6%;
+		margin: 0 1% .5em 0;
+		cursor: pointer;
+		@include responsive(medium-up) {margin: 0 1% .8em 0;}
+		@include responsive(xllarge-up) {margin: 0 1% 1em 0;}
+		@include responsive(small) {@include flex(1 0 100%); max-width: 100%; height: 20em;}
+		&:nth-child(3n) {
+			margin-right:  0;
+		}
+		@include responsive(mobile) {
+			width: 49.5%;
+			margin: 0 1% 1% 0;
+			&:nth-child(even) {
+				margin-right:  0!important;
+			}
+			&:nth-child(3n) {
+				margin-right:  1%;
+			}
+		}
+		&-title {
+			color: $white;
+			text-align: center;
+			padding: $margin-main-tour/2 $margin-main-tour;
+			position: absolute;
+			left: 0;
+			top: $margin-main-tour;
+			font-size: 1.1em;
+			&.child {background: $with-child-bg;}
+			&.romance {background: $romance-bg;}
+			&.extreme {background: $extreme-bg;}
+			&.weekend {background: $weekend-bg;}
+			&.all-inclusive {background: $all-inclusive-bg;}
+			&.excursions {background: $excursions-bg;}
+		}
+		&-text {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 6em;
+			background: rgba(0,0,0,.6);
+			@include display-flex;
+			@include justify-content(center);
+  			@include align-items(center);
+		}
+		&-name, &-prise {
+			color: $white;
+			padding: 0 $margin-main-tour;
+			line-height: 1.4;
+		}
+		&-name {
+			width:66%;
+			font-size: 1.1em;
+		}
+		&-prise {
+			width:33%;
+			text-align: right;
+			font-size: 1.5em;
+		}
+		&-icons {
+			position: absolute;
+			right: $margin-main-tour;
+			width: 30px;
+			& .icons {
+				background-image: url('../img/sprites.png');
+  				background-repeat: no-repeat;
+			} 
+			& .icons-like {
+				width: 28px;
+  				height: 25px;
+				background-position: 0 0;
+				position:absolute;
+				z-index: 2;
+				&-wrap {
+					position: relative;
+				} 
+			}
+		}
+
+	}
+	&-block {
+		@include display-flex;
+		@include wrapper;
+		@include flex-wrap(wrap);
+		overflow: hidden;
+		@include responsive(small) {
+			@include flex-wrap(nowrap); padding: 0; margin: 0 1em;
+		}
+	}
+	.hot &-items {
+		&-prise {
+			color: $orange;
+			font-weight: 700;
+		}
+		&-icons > .icons-fire {
+  			width: 24px;
+   			height: 31px;
+			background-position: 0 -63px;
+			margin-top: 3em;	
+		}
+	}
+	&-arrow {
+		width: 100%;
+		margin: 1em 0;
+		&-left svg, &-right svg {
+			fill:$blue-green;
+  			width: 5em;
+    		height: 80px;
+			position:absolute;
+			top: 50%;
+			@include transform(translate(0, -50%));
+			display: block;
+			cursor: pointer;
+			@include transition(.5s ease-in-out);
+			@include responsive(small) {bottom: 0;}
+			&:hover {
+				fill: $orange;
+			}
+		}
+		&-left svg {
+			left: 1em;
+			@include responsive(mobile) {left: .5em;}
+		}
+		&-right svg {
+			right: 1em;
+			@include responsive(mobile) {right: .5em;}
+		}
+	}
+}
+.sub-block {@include wrapper;}
+.subscribe {
+	background: $subscribe-bg;
+	border-radius: $radius;
+	text-align: center;
+	padding: 2em 1em;
+	&-header {
+		font-size: 1.7em;
+		color: $blue-green;
+	}
+	&-text {
+		font-size: 1.25em;
+		color: $subscribe-text;
+		margin:.5em 0 1em;
+	}
+	&-name, &-email {
+		border: 1px solid $blue-green;	
+		border-radius: $radius;
+		padding: .75em;
+		color: $subscribe-placeholder;	
+		margin-bottom: 1em;
+		@include responsive(small) {width: 100%;}
+		@include box-sizing(border-box);
+		&:focus {outline: none;}
+	}
+	&-email {
+		margin-left: 1em;
+		@include responsive(small) {margin-left: 0;}
+	}
+	.icon-email {
+		width: 16px;
+    	height: 13px;
+		background-image: url('../img/sprites.png');
+  		background-repeat: no-repeat; 
+		background-position: 0 -292px;
+		display: block;
+		position: absolute;
+		right: 1em;
+		top: .75em;
+
+	}
+	&-button {
+		@include transition(.5s ease-in-out);
+		margin: 0 auto;
+		display: block;
+		background: $subscribe-button-color;
+		border-radius: $radius;
+		color: $white;
+		text-transform: uppercase;
+		font-size: 1em;
+		border: none;
+		border-bottom: 1px solid $subscribe-button-border;
+		padding: .75em 1.5em;
+		@include responsive(small) {width: 100%;}
+		&:hover {
+			background: $subscribe-button-border;
+		}
+
+	}
+	&-form {
+		width: 34em;
+    	margin: 0 auto;
+    	position: relative;
+    	@include responsive(small) {width: 16em;}
+	}
+}
+.best-blog {
+	margin: 2em 0;
+	position: relative;
+	&-header {
+		color: $subscribe-text;
+		background: $white;
+		width: 10em;
+		margin: 0 auto 2em;
+		text-align: center;
+		font-size: 1.7em;
+	}
+	&-line {
+		position: absolute;
+		top: 5px;
+		width:100%;
+		height: 1px;
+		background: $orange;
+		border: none;
+		border-bottom: 1px solid $subscribe-bg;
+		z-index: -1;
+	}
+	&-text {
+		color: $white;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+  		left: 50%;
+  		font-size: 1.25em;
+  		@include transform(translate(-50%, -50%));
+	}
+	&-wrap { 
+		@include display-flex;
+		@include responsive(mobile) { @include flex-direction(column); }
+	}
+	&-item {
+		width: 33.3%;
+		border-radius: $radius;
+		height: 15em;
+		display: block;
+		margin: 0 1em 1em 0;
+		text-decoration: none;
+		background-size: cover;
+		position: relative;
+		@include responsive(mobile) {width: 100%;}
+		&:last-child {
+			margin-right:  0;
+		}
+	}
+}

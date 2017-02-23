@@ -1,0 +1,32 @@
+
+<svg width="84.365px" height="84.365px" viewBox="0 0 84.365 84.365" enable-background="new 0 0 84.365 84.365" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="84.365" height="84.365"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<circle clip-path="url(#SVGID_2_)" stroke-dasharray="99,4,77,2" cx="42.183" cy="42.182" r="41.183"/>
+	
+		<polygon clip-path="url(#SVGID_2_)" points="
+		38.919,60.826 45.844,60.826 46.833,55.593 37.93,55.593 	"/>
+	
+		<line clip-path="url(#SVGID_2_)" x1="42.382" y1="22.896" x2="42.382" y2="55.053"/>
+	
+		<path clip-path="url(#SVGID_2_)" d="
+		M42.382,22.896c14.728,5.257,4.698,27.211,4.698,27.211"/>
+	
+		<path clip-path="url(#SVGID_2_)" d="
+		M42.382,22.896c-14.726,5.257-4.699,27.211-4.699,27.211"/>
+	
+		<path clip-path="url(#SVGID_2_)" d="
+		M26.715,35.264c0-6.495,7.442-12.368,15.667-12.368c8.226,0,15.666,5.873,15.666,12.368c0,6.184-7.31,14.842-7.31,14.842H34.027
+		C34.027,50.106,26.715,41.509,26.715,35.264z"/>
+	
+		<line clip-path="url(#SVGID_2_)" x1="33.823" y1="49.861" x2="37.726" y2="55.316"/>
+	
+		<line clip-path="url(#SVGID_2_)" x1="50.935" y1="49.861" x2="47.032" y2="55.316"/>
+</g>
+</svg>

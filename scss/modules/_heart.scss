@@ -1,0 +1,60 @@
+.icons-like-full {
+  display: none;
+  clear: both;
+}
+.icons-like-full + .icons-like-label {
+	position: absolute;
+	z-index: 100;
+	overflow: hidden;
+	height: 6em;
+	width: 6em;
+	left: calc(50% - 3em);
+	top: calc(50% - 3em);
+	display: block;
+	text-align: center;
+	line-height: 95px;
+	cursor: pointer;
+	@include transition(all 300ms ease);
+	border-radius: 50%;
+}
+.icons-like-full + .icons-like-label:before {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	background: rgb(220, 72, 127);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	@include transform(scale(0));;
+}
+.icons-like-full + .icons-like-label:after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	background: $white;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	@include transform(scale(0));
+}
+.icons-like-full:checked + .icons-like-label svg {
+	fill: $orange;
+	stroke: $white;
+	stroke-width:1px;
+	@include transform(scale(1.3));
+	@include transition(all 300ms ease-in-out);
+}
+.icons-like-full:checked + .icons-like-label:after {@include animation(like-a 0.3s 0.2s forwards);}
+.icons-like-full:checked + .icons-like-label:before {@include animation(like-a 0.5s 0s forwards);}
+.icons-like-label svg {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 11.5px;
+    margin-top:6.5px;
+    margin-right: 1.75px;;
+	fill: none;
+}

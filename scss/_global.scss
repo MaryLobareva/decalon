@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Fonts
+$text: 'Open Sans', Helvetica, Arial, sans-serif;
+
+// = Colors
+// -----------------------------
+
+$blue-green: #0fafad;
+$nav-text-color: #f0f8f8;
+$nav-text-hover-color: #fff1f0;
+$nav-border-color: #0a7776;
+$nav-border-hover-color: #ba2100;
+$orange: #ff2d00;
+$white: #ffffff;
+
+$all-inclusive-bg: $orange;
+$excursions-bg: #385b9a;
+$extreme-bg: #002a74;
+$romance-bg: #ac4385;
+$weekend-bg: #fc9a69;
+$with-child-bg: #39bdcc;
+
+$subscribe-bg: #f5f8fa;
+$subscribe-button-color: #fc9a69;
+$subscribe-button-border: #e84c3d;
+$subscribe-text: #2d3e50;
+$subscribe-header: $blue-green;
+$subscribe-placeholder: #bec3c7;
+
+$blue-footer: #002a74;
+$footer-text: $blue-green;
+$footer-white: #f0f1f5;
+$input-border-color: #0ea8a6;
+
+// = HEIGHT
+// -----------------------------
+
+$header-h: 5em;
+$radius: .75em;
+$hamburger-height: 1em;
+$margin-main-tour: 1em;
+
+@mixin width-form {
+  width: 33em;
+  @include responsive(mobile) {width: 16em;}
+  }
+
+// Max width wrapper
+$wrapper-width: pxtoem(1140, 16);
+
+
+@mixin wrapper {
+	padding-left: 1em;
+	padding-right: 1em;
+	@include responsive(small-up) {
+		padding-left: 9em;
+		padding-right: 9em;
+	}
+  @include responsive(xllarge-up) {
+    padding-left: 15em;
+    padding-right: 15em;
+  }
+}
+@mixin button-search {
+  background: $subscribe-button-border;
+  border:none;
+  border-bottom: 2px solid #c34033;  
+  border-radius: $radius;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: .75em;
+  letter-spacing: 2px;
+  &:hover {
+    background: #c34033;
+  }
+}
+@mixin input-search {
+  background: $white;
+  padding: .75em;
+  border: 1px solid $input-border-color;
+  border-radius: $radius;
+}
+@mixin label-search {
+      color: $white;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 700; 
+      font-size: 1.125em;
+}
+
+// = MEDIA
+// -----------------------------
+
+$xs: 550px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+$xl-lg: 1440px;
+
+@mixin responsive($media) {
+	@if $media == mobile {
+    	@media only screen and (max-width: $xs) { @content; }
+  	}
+  	@else if $media == tablet {
+    	@media only screen and (min-width: $xs + 1) and (max-width: $sm - 1) { @content; }
+  	}
+    @else if $media == small {
+      @media only screen and (max-width: $sm) { @content; }
+    }
+    @else if $media == small-up {
+      @media only screen and (min-width: $sm) { @content; }
+    }
+  	@else if $media == medium {
+    	@media only screen and (min-width: $sm + 1) and (max-width: $md - 1) { @content; }
+  	}
+    @else if $media == medium-down {
+      @media only screen and (max-width: $md) { @content; }
+    }
+    @else if $media == medium-up {
+      @media only screen and (min-width: $md) { @content; }
+    }
+  	@else if $media == large {
+    	@media only screen and (min-width: $md + 1) and (max-width: $lg - 1) { @content; }
+  	}
+  	@else if $media == large-up {
+    	@media only screen and (min-width: $lg) { @content; }
+  	}
+    @else if $media == xllarge {
+      @media only screen and (min-width: $lg + 1) and (max-width: $xl-lg - 1) { @content; }
+    }
+    @else if $media == xllarge-up {
+      @media only screen and (min-width: $xl-lg) { @content; }
+    }
+}

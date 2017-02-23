@@ -1,0 +1,40 @@
+
+.checked {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  border-radius: 50px;
+  border:3px solid $white;
+ &-label {
+    width: .875em;
+    height: .875em;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    cursor: pointer;
+    border-radius: 50px;
+    background: none;
+    &:after {
+	    content: '';
+	    width: 1.25em;
+	    height: .75em;
+	    position: absolute;
+	    top: -10px;
+	    left: -6px;
+	    border: 3px solid $subscribe-button-border;
+	    border-top: none;
+	    border-right: none;
+	    background: transparent;
+	    opacity: 0;
+	    @include transform(rotate(-45deg));
+	    @include transition(.5s ease-in-out);
+    }
+  }
+   &-input {
+    visibility: hidden;
+    &:checked + .checked-label:after {
+      opacity: 1;
+    } 
+  }   
+}
+

@@ -1,0 +1,76 @@
+/* ==|====================
+   Layout/Nav
+   ======================= */
+
+.nav {
+	margin: 3em auto 1.5em;
+	&-wrap {
+		@include display-flex;
+		@include justify-content(space-between);
+	}
+	&-link {
+		color: $nav-text-color;
+		padding: .85em;
+		background: $blue-green;
+		border-bottom:1px solid $nav-border-color;
+		border-radius: $radius;
+		text-decoration: none;
+		font-weight: 700;
+		font-family: $text;
+		display: block;
+		font-size: 1em;
+		text-transform: uppercase;
+		@include transition(.5s ease-in-out);
+		text-align: center;
+		cursor: pointer;
+		@include responsive(large) {
+			padding: .75em .25em;
+			font-size: .8em
+		}
+		@include responsive(xllarge-up) {font-size:1em;}
+		&:hover {
+			background: $orange;
+			border-bottom-color:$nav-border-hover-color;
+			color:$nav-text-hover-color;
+			text-decoration: none;
+		}
+	}
+	&-items {
+		margin-right: 0.75em;
+		width: 16.7%;
+		&:last-child {margin-right: 0;}
+		@include responsive(medium-down){width: 100%!important;}
+	}
+}
+@include responsive(medium-down) {
+	.nav {
+		position: relative;
+		margin: -2px 0 0;
+		&-wrap {
+			display: none;
+			border-bottom-right-radius: $radius;
+			border-bottom-left-radius: $radius;
+			background: $blue-green;
+		}
+		.menu-hamburger {
+			position: absolute;
+			right:1em;
+		}
+		&-hamburger-wrap {
+			background: $blue-green;
+			height: 3em;
+			padding: 1em;
+			@include box-sizing(border-box);
+		}
+		&-items {
+			margin-right:0;
+		}
+	} 
+}
+
+// = MOBILE
+// -----------------------------
+
+@include responsive(medium-up) {
+	.nav-hamburger-wrap {display: none;}
+}
